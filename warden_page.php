@@ -4,8 +4,7 @@
 
 session_start();
 
-if(!isset($_SESSION['user_name'])){
-   
+if(!isset($_SESSION['warden_name'])){
    header('location:login_form.php');
 }
 
@@ -28,11 +27,10 @@ if(!isset($_SESSION['user_name'])){
 <div class="container">
 
    <div class="content">
-      <h3>hi, <span>user</span></h3>
-      <h1>welcome <span><?php echo $_SESSION['user_name'] ?></span></h1>
-      <p>this is an user page</p>
-      <a href="login_form.php" class="btn">login</a>
-      <a href="register_form.php" class="btn">register</a>
+      <h3>hi, <span>warden</span></h3>
+      <h1>welcome <span><?php echo $_SESSION['warden_name'] ?></span></h1>
+      <p>this is an Warden page</p>
+
       <a href="logout.php" class="btn">logout</a>
    </div>
 
