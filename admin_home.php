@@ -23,19 +23,23 @@ if(!isset($_SESSION['admin_name'])){
 
 </head>
 <body>
+   <?php include 'header.php'; ?>
    
-<div class="container">
 
-   <div class="content">
-      <h3>hi, <span>admin</span></h3>
-      <h1>welcome <span><?php echo $_SESSION['admin_name'] ?></span></h1>
-      <p>this is an admin page</p>
+   <div class="content-body">
+      <p class="user-type">Hello, Admin</p>
+      <h1>Welcome <span><?php echo $_SESSION['admin_name'] ?></span> to your Admin Panel</h1>
+      <p class="body-instru">Rhis admin page let's you register Wardens,Students ,Landlords . </p>
+      <p class="body-heading">Register a User/Warden or a Landlord</p>
+
+      <div style="display: flex; flex-direction: row;">
       <a href="login_form.php" class="btn">login</a>
       <a href="admin_register_form.php" class="btn">register</a>
       <a href="logout.php" class="btn">logout</a>
+      </div>
    </div>
 
-</div>
+
 
 </body>
 </html>

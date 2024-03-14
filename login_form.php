@@ -23,25 +23,26 @@ if(isset($_POST['submit'])){
 
       if($row['user_type'] == 'admin'){
 
-         $_SESSION['admin_name'] = $row['name'];
-         header('location:admin_page.php');
+         $_SESSION['admin_name'] = $row['f_name'];
+         header('location:admin_home.php');
 
       }elseif($row['user_type'] == 'user'){
 
-         $_SESSION['user_name'] = $row['name'];
-         header('location:user_page.php');
+         $_SESSION['user_name'] = $row['f_name'];
+         header('location:usser_page.php');
 
        }
 
       elseif($row['user_type'] == 'warden'){
 
-         $_SESSION['warden_name'] = $row['name'];
-         header('location:user_page.php');
+         $_SESSION['warden_name'] = $row['f_name'];
+         header('location:warden_page.php');
 
       }elseif($row['user_type'] == 'landlord'){
 
-         $_SESSION['landlord_name'] = $row['name'];
-         header('location:user_page.php');
+          $_SESSION['user_id'] = $row['user_id'];
+         $_SESSION['landlord_name'] = $row['f_name'];
+         header('location:landlord_page.php');
 
       }
 
