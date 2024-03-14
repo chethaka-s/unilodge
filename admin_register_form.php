@@ -74,13 +74,7 @@ if(isset($_POST['submit'])){
       <input type="submit" name="submit" value="register now" class="form-btn">
      
    </form>
-    <form class="" action="" method="post" autocomplete="off" enctype="multipart/form-data">
-      <label for="name">Name : </label>
-      <input type="text" name="name" id = "name" required value=""> <br>
-      <label for="image">Image : </label>
-      <input type="file" name="image" id = "image" accept=".jpg, .jpeg, .png" value=""> <br> <br>
-      <button type = "submit" name = "submit">Submit</button>
-    </form>
+   
 
 
 

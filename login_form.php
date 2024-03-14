@@ -67,11 +67,14 @@ if(isset($_POST['submit'])){
 
 </head>
 <body>
+   <div style="display: flex;
    
+    justify-content: center;
+    align-items: center;">
 <div class="form-container">
 
    <form action="" method="post">
-      <h3>login now</h3>
+      <h3>LOGIN NOW</h3>
       <?php
       if(isset($error)){
          foreach($error as $error){
@@ -79,13 +82,18 @@ if(isset($_POST['submit'])){
          };
       };
       ?>
-      <input type="email" name="email" required placeholder="enter your email">
-      <input type="password" name="password" required placeholder="enter your password">
-      <input type="submit" name="submit" value="login now" class="form-btn">
+      <div class="form-fields">
+      <input type="email" class="input-field" name="email" required placeholder="enter your email">
+      <input type="password" class="input-field" name="password" required placeholder="enter your password">
+      <input type="submit" name="submit"  class="button-form"value="Login" class="form-btn">
+      <br>
       <p>don't have an account? <a href="register.php">register now</a></p>
+   </div>
    </form>
 
 </div>
+
+   </div>
 
 </body>
 </html>
