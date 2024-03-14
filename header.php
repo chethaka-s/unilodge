@@ -14,7 +14,7 @@
   
     <ul class="nav-item"><a href ="www.google.com">Home </a></ul>
     <ul class="nav-item"><a href ="www.google.com">About Us</a></ul>
-    <ul class="nav-item"><a href ="www.google.com">Blogs </a></ul>
+    <ul class="nav-item"><a href ="./admin_blogs.php">Blogs </a></ul>
 
 
 </div>
