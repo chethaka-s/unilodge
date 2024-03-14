@@ -6,13 +6,14 @@ session_start();
 
 if(isset($_POST['submit'])){
 
-   $name = mysqli_real_escape_string($conn, $_POST['name']);
+   // $f_name = mysqli_real_escape_string($conn, $_POST['f_name']);
+   // $l_name = mysqli_real_escape_string($conn, $_POST['l_name']);
    $email = mysqli_real_escape_string($conn, $_POST['email']);
    $pass = md5($_POST['password']);
-   $cpass = md5($_POST['cpassword']);
-   $user_type = $_POST['user_type'];
+   // $cpass = md5($_POST['cpassword']);
+   // $user_type = $_POST['user_type'];
 
-   $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$pass' ";
+   $select = " SELECT * FROM users WHERE email = '$email' && password = '$pass' ";
 
    $result = mysqli_query($conn, $select);
 
@@ -30,10 +31,23 @@ if(isset($_POST['submit'])){
          $_SESSION['user_name'] = $row['name'];
          header('location:user_page.php');
 
+       }
+
+      elseif($row['user_type'] == 'warden'){
+
+         $_SESSION['warden_name'] = $row['name'];
+         header('location:user_page.php');
+
+      }elseif($row['user_type'] == 'landlord'){
+
+         $_SESSION['landlord_name'] = $row['name'];
+         header('location:user_page.php');
+
       }
-     
+
    }else{
       $error[] = 'incorrect email or password!';
+
    }
 
 };
