@@ -82,7 +82,7 @@ if(isset($_POST['submit'])){
          };
       };
       ?>
-      <div class="form-fields">
+      <div class="form-fields reg ">
       <input type="email" class="input-field" name="email" required placeholder="enter your email">
       <input type="password" class="input-field" name="password" required placeholder="enter your password">
       <input type="submit" name="submit"  class="button-form"value="Login" class="form-btn">
