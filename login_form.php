@@ -1,6 +1,6 @@
 <?php
 
-@include 'config.php';
+$conn = mysqli_connect('localhost','root','','unilodge', '3308');
 
 session_start();
 
@@ -8,7 +8,7 @@ if(isset($_POST['submit'])){
 
    // $f_name = mysqli_real_escape_string($conn, $_POST['f_name']);
    // $l_name = mysqli_real_escape_string($conn, $_POST['l_name']);
-   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $email = $_POST['email'];
    $pass = md5($_POST['password']);
    // $cpass = md5($_POST['cpassword']);
    // $user_type = $_POST['user_type'];
@@ -63,7 +63,7 @@ if(isset($_POST['submit'])){
    <title>login form</title>
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/style.css" type="text/css">
 
 </head>
 <body>
