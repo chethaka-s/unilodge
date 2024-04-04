@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
       if($password != $cpassword){
          $error[] = 'password not matched!';
       }else{
-         $insert = "INSERT INTO user_form(name, email, password, user_type) VALUES('$name','$email','$password','$user_type')";
+         $insert = "INSERT INTO users(f_name,l_name, email, password, user_type) VALUES('$f_name','$l_name','$email','$password','$user_type')";
          mysqli_query($conn, $insert);
          header('location:login_form.php');
       }
@@ -48,11 +48,14 @@ if(isset($_POST['submit'])){
 
 </head>
 <body>
+    <div style="display: flex;
    
-<div class="form-container">
+    justify-content: center;
+    align-items: center;">
+<div class="form-container reg ">
 
    <form action="" method="post">
-      <h3>register now</h3>
+      <h3>REGISTER NOW</h3>
       <?php
       if(isset($error)){
          foreach($error as $error){
@@ -60,19 +63,23 @@ if(isset($_POST['submit'])){
          };
       };
       ?>
-      <input type="text" name="f_name" required placeholder="Enter Your First Name">
-      <input type="text" name="l_name" required placeholder="Enter Your  Second Name">
-      <input type="email" name="email" required placeholder="enter Your email">
-      <input type="password" name="password" required placeholder="enter your password">
-      <input type="password" name="cpassword" required placeholder="confirm your password">
-      <select name="user_type">
+       <div class="form-fields" >
+      <input type="text" class="input-field"  name="f_name" required placeholder="Enter Your First Name">
+      <input type="text" class="input-field"  name="l_name" required placeholder="Enter Your  Second Name">
+      <input type="email" class="input-field"  name="email" required placeholder="enter Your email">
+      <input type="password" class="input-field"  name="password" required placeholder="enter your password">
+      <input type="password"  class="input-field"  name="cpassword" required placeholder="confirm your password">
+      <select name="user_type" class="input-field" style="height:3rem;"  >
          <option value="user">User</option>
       </select>
-      <input type="submit" name="submit" value="register now" class="form-btn">
+      <input type="submit" class="button-form" name="submit" value="Register" class="form-btn">
       <p>already have an account? <a href="login_form.php">login now</a></p>
+   </div>
    </form>
 
 </div>
+   </div>
+   </div>
 
 </body>
 </html>

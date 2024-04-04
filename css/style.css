@@ -1,13 +1,221 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
+/* cdd7d6 grey
+f87060 - pink
+102542 -blue */
+
 *{
    font-family: 'Poppins', sans-serif;
    margin:0; padding:0;
    box-sizing: border-box;
    outline: none; border:none;
    text-decoration: none;
+   
 }
 
+.header-container{
+   display: flex;
+   height: 10rem;
+   width: 100%;
+   align-items: center;
+   justify-content: center;
+   background-color: #cdd7d6;
+   -webkit-box-shadow: 0px 14px 32px -3px rgba(16,37,66,0.62);
+   -moz-box-shadow: 0px 14px 32px -3px rgba(16,37,66,0.50);
+   box-shadow: 0px 14px 32px -3px rgba(16,37,66,0.62);
+
+
+}
+.nav-item{
+   padding: 1rem;
+   text-decoration: none;
+   font-size: 1rem;
+   color: #102542;
+
+}
+
+.content-body{
+   display: flex;
+   flex-direction: column;
+   margin-left: 5%;
+   margin-right: 5%;
+}
+.user-type{
+   margin-top: 2rem;
+   font-weight: 500;
+   font-size: 2rem;
+   color: #102542;
+   border-bottom: 0.5px solid #102542;
+
+}
+.body-instru{
+   font-size: 1rem;
+
+}
+.body-heading{
+   font-size: 1.5rem;
+   font-weight: 500;
+   margin-top: 3rem;
+   margin-bottom: 1rem;
+
+}
+
+
+.btn{
+   margin: 1rem;
+ display: inline-block;
+outline: none;
+cursor: pointer;
+ font-size: 14px;
+line-height: 1;
+border-radius: 500px;
+transition-property: background-color,border-color,color,box-shadow,filter;
+transition-duration: .3s;
+border: 1px solid transparent;
+ letter-spacing: 2px;
+ min-width: 160px;
+text-transform: uppercase;
+  white-space: normal;
+font-weight: 700;
+text-align: center;
+padding: 16px 14px 18px;
+color: #fff;
+ background-color: #102542;
+height: 48px;
+:hover{
+     background-color: #234779;
+}
+                
+}
+
+.form-container{
+       height: 42rem;
+       width: 35rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding:20px;
+   padding-bottom: 60px;
+   background: #eee;
+   /* border: 1px solid red; */
+
+      -webkit-box-shadow: 0px 14px 32px -3px rgba(16,37,66,0.62);
+   -moz-box-shadow: 0px 14px 32px -3px rgba(16,37,66,0.50);
+   box-shadow: 0px 14px 32px -3px rgba(16,37,66,0.62);
+
+}
+/* .reg{
+    height: 45 rem;
+} */
+
+.form-fields{
+   display: flex;
+   flex-direction: column;
+   height: auto;
+   width: 100%;
+}
+
+.input-field-blog{
+      width: 100%;
+    height: auto;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.blog-submit{
+   height: 2rem;
+    width: 7rem;
+    color: white;
+    font-weight: 500;
+    background-color: #102542;
+    border-radius: 18px;
+
+}
+
+
+
+
+.input-field{
+   width: auto;
+   height: 2.5rem;
+       margin-bottom: 15px;
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+
+.input-field-2{
+   width: 80%;
+   height: 100%;
+   margin-bottom: 15px;
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(255, 200, 0, 0.137);
+    border-radius: 10px;
+}
+
+.blog-box{
+   flex-direction: column;
+       height: 55rem;
+       width: 45rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding-top:60px;
+   padding-bottom: 60px; 
+   background: #eee;
+   /* border: 1px solid red; */
+
+   -webkit-box-shadow: 0px 14px 32px -3px rgba(16,37,66,0.62);
+   -moz-box-shadow: 0px 14px 32px -3px rgba(16,37,66,0.50);
+   box-shadow: 0px 14px 32px -3px rgba(16,37,66,0.62);
+
+}
+.blogfit{
+display: flex;
+align-items: center;
+    justify-content: center;
+}
+
+.button-form{
+   margin-top: 20px;
+   margin-bottom: 20px;
+   width: 10rem;
+                display: inline-block;
+                outline: 0;
+                border:0;
+                cursor: pointer;
+                text-decoration: none;
+                position: relative;
+                color: #000;
+                background: #fff;
+                line-height: 10px;
+                border-radius: 15px;
+                padding: 10px;
+                font-size: 18px;
+                font-weight: 600;
+                box-shadow: rgb(255, 198, 0) -2px -2px 0px 2px, rgb(246, 84, 174) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+                transition: all 0.2s;
+                :hover{
+                    box-shadow: rgb(246, 84, 174) -2px -2px 0px 2px, rgb(255, 198, 0) 0px 0px 0px 4px, rgba(0, 0, 0, 0.05) 0px 0px 2px 7px;
+                    transform: scale(1.01);
+                }
+                
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 
 .container{
    min-height: 100vh;
    display: flex;
@@ -132,4 +340,4 @@
    border-radius: 5px;
    font-size: 20px;
    padding:10px;
-}
+} */
