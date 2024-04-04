@@ -1,5 +1,6 @@
 <?php session_start();
-	$con = mysqli_connect("localhost","root","","unilodge","3308");
+	// $con = mysqli_connect("localhost","root","","unilodge","3308");
+	@include 'config.php';
 	if (!$con)
 		{
 			die("Sorry!!! We are facing technical issue..");

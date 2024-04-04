@@ -63,13 +63,13 @@ if(isset($_POST['submit'])){
          };
       };
       ?>
-       <div class="form-fields">
+       <div class="form-fields" >
       <input type="text" class="input-field"  name="f_name" required placeholder="Enter Your First Name">
       <input type="text" class="input-field"  name="l_name" required placeholder="Enter Your  Second Name">
       <input type="email" class="input-field"  name="email" required placeholder="enter Your email">
       <input type="password" class="input-field"  name="password" required placeholder="enter your password">
       <input type="password"  class="input-field"  name="cpassword" required placeholder="confirm your password">
-      <select name="user_type" class="input-field"  >
+      <select name="user_type" class="input-field" style="height:3rem;"  >
          <option value="user">User</option>
       </select>
       <input type="submit" class="button-form" name="submit" value="Register" class="form-btn">
@@ -78,6 +78,7 @@ if(isset($_POST['submit'])){
    </form>
 
 </div>
+   </div>
    </div>
 
 </body>

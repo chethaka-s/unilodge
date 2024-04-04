@@ -1,7 +1,7 @@
 <?php
 
-$conn = mysqli_connect('localhost','root','','unilodge', '3308');
-
+// $conn = mysqli_connect('localhost','root','','unilodge', '3308');
+@include 'config.php';
 session_start();
 
 if(isset($_POST['submit'])){

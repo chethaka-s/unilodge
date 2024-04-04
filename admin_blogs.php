@@ -60,7 +60,8 @@
 <body>
 	<div><p><a href="admin_home.php"><< Back</a></p></div>
 	<?php
-		$conn = mysqli_connect('localhost','root','','unilodge', '3308');
+		// $conn = mysqli_connect('localhost','root','','unilodge', '3308');
+		@include 'config.php';
 		if (!$conn)
 		{
 			die("Sorry!!! We are facing technical issue..");

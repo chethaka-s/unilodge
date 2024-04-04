@@ -59,7 +59,8 @@
 
 <body>
 	<?php
-		$conn = mysqli_connect('localhost','root','','unilodge', '3308');
+		// $conn = mysqli_connect('localhost','root','','unilodge', '3308');
+		@include 'config.php';
 		if (!$conn)
 		{
 			die("Sorry!!! We are facing technical issue..");

@@ -12,7 +12,8 @@
             move_uploaded_file($_FILES["image"]["tmp_name"],$image);
         }
 		
-		$con = mysqli_connect("localhost","root","","unilodge","3308");
+		// $con = mysqli_connect("localhost","root","","unilodge","3308");
+        @include 'config.php';
 		
 		if (!$con) {
 			die("Sorry!!! We are facing technical issue..");

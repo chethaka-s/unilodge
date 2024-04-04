@@ -114,6 +114,27 @@ height: 48px;
    height: auto;
    width: 100%;
 }
+
+.input-field-blog{
+      width: 100%;
+    height: auto;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.blog-submit{
+   height: 2rem;
+    width: 7rem;
+    color: white;
+    font-weight: 500;
+    background-color: #102542;
+    border-radius: 18px;
+
+}
+
+
+
+
 .input-field{
    width: auto;
    height: 2.5rem;
@@ -122,6 +143,42 @@ height: 48px;
     padding: 15px;
     border-radius: 10px;
 }
+
+
+.input-field-2{
+   width: 80%;
+   height: 100%;
+   margin-bottom: 15px;
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(255, 200, 0, 0.137);
+    border-radius: 10px;
+}
+
+.blog-box{
+   flex-direction: column;
+       height: 55rem;
+       width: 45rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding-top:60px;
+   padding-bottom: 60px; 
+   background: #eee;
+   /* border: 1px solid red; */
+
+   -webkit-box-shadow: 0px 14px 32px -3px rgba(16,37,66,0.62);
+   -moz-box-shadow: 0px 14px 32px -3px rgba(16,37,66,0.50);
+   box-shadow: 0px 14px 32px -3px rgba(16,37,66,0.62);
+
+}
+.blogfit{
+display: flex;
+align-items: center;
+    justify-content: center;
+}
+
 .button-form{
    margin-top: 20px;
    margin-bottom: 20px;
@@ -147,6 +204,16 @@ height: 48px;
                 }
                 
 }
+
+
+
+
+
+
+
+
+
+
 
 /* 
 .container{

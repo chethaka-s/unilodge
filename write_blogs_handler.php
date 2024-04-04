@@ -1,5 +1,5 @@
 <?php session_start();
-    // @include 'config.php';
+    @include 'config.php';
 
     if(isset($_POST["btnevent"]))
     {
@@ -11,14 +11,15 @@
         $image = "BlogUploads/".basename($_FILES["image"]["name"]);
         move_uploaded_file($_FILES["image"]["tmp_name"],$image);
 
-        $conn = mysqli_connect('localhost','root','','unilodge', '3308');
-
+        // $conn = mysqli_connect('localhost','root','','unilodge', '3308');
+        // @include 'config.php';
         if (!$conn)
         {
             die("Sorry!!! We are facing technical issue..");
         }
 
-        $sql = "INSERT INTO `blogs` (`blogid`, `title`, `description`, `content`, `imagePath`, `date`, `email`) VALUES (NULL, '".$blogtitle."', '".$desc."', '".$content."', '".$image."', '".$date."', '".$_SESSION["admin_name"]."');";
+        $sql = "INSERT INTO `blogs` (`blogid`, `title`, `description`, `content`, `imagePath`, `date`, `email`) 
+        VALUES (NULL, '".$blogtitle."', '".$desc."', '".$content."', '".$image."', '".$date."', '".$_SESSION["admin_name"]."');";
 
         if (mysqli_query($conn, $sql) > 0)
         {

@@ -19,7 +19,7 @@ if(!isset($_SESSION['admin_name'])){
    <title>admin page</title>
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="../css/style.css">
 
 </head>
 <body>
@@ -35,9 +35,15 @@ if(!isset($_SESSION['admin_name'])){
       <div style="display: flex; flex-direction: row;">
       <a href="login_form.php" class="btn">login</a>
       <a href="admin_register_form.php" class="btn">register</a>
-      <a href="write_blogs.php" class="btn">Write a Blog</a>
+      
       <a href="logout.php" class="btn">logout</a>
+      <br>
+      <br>
+      
+
       </div>
+      <p class="body-heading">Write a Blog Article </p>
+      <a href="write_blogs.php" class="btn" style="    width: 100px;">Write a Blog</a>
    </div>
 
 
