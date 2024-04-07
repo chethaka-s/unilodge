@@ -37,49 +37,54 @@ if(isset($_POST['submit'])){
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>register form</title>
 
-   <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register form</title>
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
+
 <body>
     <div style="display: flex;
    
     justify-content: center;
     align-items: center;">
-<div class="form-container reg ">
+        <div class="form-container reg ">
 
-   <form action="" method="post">
-      <h3>REGISTER NOW</h3>
-      <?php
+            <form action="" method="post">
+                <h3>REGISTER NOW</h3>
+                <?php
       if(isset($error)){
          foreach($error as $error){
             echo '<span class="error-msg">'.$error.'</span>';
          };
       };
       ?>
-       <div class="form-fields" >
-      <input type="text" class="input-field"  name="f_name" required placeholder="Enter Your First Name">
-      <input type="text" class="input-field"  name="l_name" required placeholder="Enter Your  Second Name">
-      <input type="email" class="input-field"  name="email" required placeholder="enter Your email">
-      <input type="password" class="input-field"  name="password" required placeholder="enter your password">
-      <input type="password"  class="input-field"  name="cpassword" required placeholder="confirm your password">
-      <select name="user_type" class="input-field" style="height:3rem;"  >
-         <option value="user">User</option>
-      </select>
-      <input type="submit" class="button-form" name="submit" value="Register" class="form-btn">
-      <p>already have an account? <a href="login_form.php">login now</a></p>
-   </div>
-   </form>
+                <div class="form-fields">
+                    <input type="text" class="input-field" name="f_name" required placeholder="Enter Your First Name">
+                    <input type="text" class="input-field" name="l_name" required placeholder="Enter Your  Second Name">
+                    <input type="email" class="input-field" name="email" required placeholder="enter Your email">
+                    <input type="password" class="input-field" name="password" required
+                        placeholder="enter your password">
+                    <input type="password" class="input-field" name="cpassword" required
+                        placeholder="confirm your password">
+                    <select name="user_type" class="input-field" style="height:3rem;">
+                        <option value="user">User</option>
+                    </select>
+                    <input type="submit" class="button-form" name="submit" value="Register" class="form-btn">
+                    <p>already have an account? <a href="login_form.php">login now</a></p>
+                </div>
+            </form>
 
-</div>
-   </div>
-   </div>
+        </div>
+    </div>
+    </div>
 
 </body>
+
 </html>

@@ -29,7 +29,7 @@ if(isset($_POST['submit'])){
       }elseif($row['user_type'] == 'user'){
 
          $_SESSION['user_name'] = $row['f_name'];
-         header('location:usser_page.php');
+         header('location:user_page.php');
 
        }
 
