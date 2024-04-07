@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $updated_rental = $_POST['rental'];
     $updated_occupancy =$_POST['occupancy'];
     // $updated_location = $_POST['location'];
-   
+
     
     // Update the boarding place information in the database
     $update_sql = "UPDATE boarding_places SET 
@@ -74,36 +74,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Edit Boarding Place</title>
+
 </head>
 <body>
-
+<div class="blogfit">
+    <div class="blog-box">
 <h2>Edit Boarding Place</h2>
 
 <form method="post">
+<div class="control">
     <label for="place_name">Title</label><br>
-    <input type="text" id="place_name" name="updated_place_name" value="<?php echo $boarding_place['title']; ?>"><br><br>
-    
-   
-    
-    <label for="description">Description:</label><br>
-    <textarea id="description" name="updated_description"><?php echo $boarding_place['description']; ?></textarea><br><br>
-    
-     <label for="place_name">Contact Number:</label><br>
-    <input type="text" id="place_name" name="updated_contactNumber" value="<?php echo $boarding_place['contact_number']; ?>"><br><br>
-    
-    <label for="place_name">Rental</label><br>
-    <input type="text" id="place_name" name="updated_rental" value="<?php echo $boarding_place['rental']; ?>"><br><br>
-    
-    <label for="place_name">Title</label><br>
-    <input type="text" id="place_name" name="updated_occupancy" value="<?php echo $boarding_place['occupancy']; ?>"><br><br>
-    
-   
+    <input type="text" class="input-field-blog" id="title1" name="updated_place_name" value="<?php echo $boarding_place['title']; ?>"><br><br>
+</div>
 
-    
-    
-    <input type="submit" value="Update">
+<div class="control">
+    <label for="description">Description:</label><br>
+    <textarea id="desc" class="input-field-blog" name="updated_description"><?php echo $boarding_place['description']; ?></textarea><br><br>
+</div>   
+
+<div class="control">
+    <label for="place_name">Contact Number:</label><br>
+    <input type="text" id="content" class="input-field-blog" name="updated_contactNumber" value="<?php echo $boarding_place['contact_number']; ?>"><br><br>
+</div>  
+
+<div class="control">
+    <label for="place_name">Rental</label><br>
+    <input type="text" id="place_name" class="input-field-blog" name="updated_rental" value="<?php echo $boarding_place['rental']; ?>"><br><br>
+</div>   
+
+<div class="control">
+    <label for="place_name">Occupancy</label><br>
+    <input type="text" id="place_name" class="input-field-blog" name="updated_occupancy" value="<?php echo $boarding_place['occupancy']; ?>"><br><br>
+</div>    
+
+        
+    <input type="submit" id="btnevent" class="blog-submit" value="Update">
 </form>
+
+</div>
+</div>
 
 </body>
 </html>
