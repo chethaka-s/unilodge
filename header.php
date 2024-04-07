@@ -12,8 +12,8 @@
     <header>
  <div class="header-container">
   
-    <ul class="nav-item"><a href ="www.google.com">Home </a></ul>
-    <ul class="nav-item"><a href ="www.google.com">About Us</a></ul>
+    <ul class="nav-item"><a href ="index.html">Home </a></ul>
+    <ul class="nav-item"><a href ="About.html">About Us</a></ul>
     <ul class="nav-item"><a href ="./admin_blogs.php">Blogs </a></ul>
 
 

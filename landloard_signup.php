@@ -44,7 +44,6 @@ if(isset($_POST['submit'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>register form</title>
 
-
     <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -74,7 +73,7 @@ if(isset($_POST['submit'])){
                     <input type="password" class="input-field" name="cpassword" required
                         placeholder="confirm your password">
                     <select name="user_type" class="input-field" style="height:3rem;">
-                        <option value="user">User</option>
+                        <option value="landlord">Landlord</option>
                     </select>
                     <input type="submit" class="button-form" name="submit" value="Register" class="form-btn">
                     <p>already have an account? <a href="login_form.php">login now</a></p>

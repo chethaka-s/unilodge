@@ -1,16 +1,16 @@
 <?php
 
 
-@include '../config.php';
+@include 'config.php';
 session_start();
 
-// Check if the user is logged in
+
 if (!isset($_SESSION['user_id'])) {
     echo "User not logged in!";
     exit;
 }
 
-// Check if the 'id' parameter is set in the URL
+
 if (!isset($_GET['boarding_place_id'])) {
     echo "Boarding place ID not provided!";
     exit;
@@ -18,26 +18,26 @@ if (!isset($_GET['boarding_place_id'])) {
 
 $boarding_place_id = $_GET['boarding_place_id'];
 
-// Fetch the boarding place information based on the provided ID
+
 $sql = "SELECT * FROM boarding_places WHERE boarding_place_id = $boarding_place_id";
 $result = $conn->query($sql);
 
-// Check if query execution was successful
+
 if (!$result) {
     echo "Error executing the query: " . $conn->error;
     exit;
 }
 
-// Check if the boarding place exists
+
 if ($result->num_rows == 0) {
     echo "Boarding place not found!";
     exit;
 }
 
-// Fetch the boarding place data
+
 $boarding_place = $result->fetch_assoc();
 
-// Handle form submission for editing
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve updated data from the form
     $updated_place_name = $_POST['title'];
@@ -47,8 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $updated_occupancy =$_POST['occupancy'];
     // $updated_location = $_POST['location'];
 
-    
-    // Update the boarding place information in the database
+   
     $update_sql = "UPDATE boarding_places SET 
     title='$updated_place_name', 
     description='$updated_description', 
@@ -59,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn->query($update_sql) === TRUE) {
         echo "Boarding place updated successfully!";
-        // Redirect to the page displaying all boarding places
+       
         // header("Location: ../landlord_page.php");
         exit;
     } else {
@@ -74,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Edit Boarding Place</title>
 
 </head>

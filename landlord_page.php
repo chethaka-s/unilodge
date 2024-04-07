@@ -8,12 +8,11 @@ if(!isset($_SESSION['landlord_name'])){
    header('location:login_form.php');
 }
 if(isset($_SESSION['user_id'])) {
-    // "user_id" key is set, you can safely access it
+  
     $userId = $_SESSION['user_id'];
-      // echo "User ID is there";
-    // Proceed with your code here
+ 
 } else {
-    // "user_id" key is not set, handle this case gracefully
+
     echo "User ID not found in session.";
 }
 
@@ -21,27 +20,27 @@ if(isset($_POST['submit'])) {
  
     $userId = $_SESSION['user_id'];
 
-    // Get form data
+ 
     $title = $_POST['title'];
     $description = $_POST['description'];
     $contactNumber = $_POST['contact_number'];
     $rental = $_POST['rental'];
     $occupancy =$_POST['occupancy'];
     $status = $_POST['status'];
+    $latitude = $_POST["latitude"];
+    $longitude = $_POST["longitude"];
     // $boarding_place_id = $_POST['boarding_place_id'];
 
 
-    // File upload handling
+  
     $uploadDir = 'uploads/';
     $fileName = basename($_FILES['image']['name']);
     $uploadFile = $uploadDir . $fileName;
 
-    // Move uploaded file to the uploads directory
     if(move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
-        // File uploaded successfully, insert data into the database
-        // You should use prepared statements to prevent SQL injection
-        $sql = "INSERT INTO boarding_places (user_id, title, description, contact_number,rental,occupancy,status, image_path)
-                VALUES ('$userId', '$title', '$description','$contactNumber', '$rental','$occupancy','$status', '$uploadFile')";
+      
+        $sql = "INSERT INTO boarding_places (user_id, title, description, contact_number,rental,occupancy,status, image_path,latitude,longitude )
+                VALUES ('$userId', '$title', '$description','$contactNumber', '$rental','$occupancy','$status', '$uploadFile',$latitude,$longitude)";
         
         if(mysqli_query($conn, $sql)) {
             echo "Boarding place uploaded successfully.";
@@ -58,8 +57,7 @@ if(isset($_POST['submit'])) {
 
 }
 
-        $user_id = $_SESSION['user_id']; // Replace 'userid' with your actual session variable name
-
+        $user_id = $_SESSION['user_id'];
         $sql = "SELECT * FROM boarding_places WHERE user_id = $user_id";
         $result = $conn->query($sql);
       
@@ -76,12 +74,52 @@ if(isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landlord</title>
 
-    <!-- custom css file link  -->
+ 
     <link rel="stylesheet" href="css/style.css">
+
+
+    <script>
+       
+        function loadGoogleMaps() {
+            var script = document.createElement('script');
+            script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBDypqYUWlG21UOjsC61YF-tA-Ydp5q96M&libraries=places&callback=initMap';
+            script.defer = true;
+            document.head.appendChild(script);
+        }
+
+       
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 6.8208936, lng: 80.0397229}, 
+                zoom: 15 
+            });
+
+           
+            var marker;
+            map.addListener('click', function(event) {
+                placeMarker(event.latLng);
+            });
+
+            function placeMarker(location) {
+                if (marker) {
+                    marker.setPosition(location);
+                } else {
+                    marker = new google.maps.Marker({
+                        position: location,
+                        map: map
+                    });
+                }
+
+                document.getElementById('latitude').value = location.lat();
+                document.getElementById('longitude').value = location.lng();
+            }
+        }
+    </script>
+
 
 </head>
 
-<body>
+<body onload="loadGoogleMaps()">
     <?php include 'header.php'; ?>
 
     <div class="container">
@@ -126,7 +164,13 @@ if(isset($_POST['submit'])) {
                 <label for="image">Image : </label>
                 <br>
                 <input type="file" name="image" id="image" class="input-field-2" accept=".jpg, .jpeg, .png" value="">
+                <input type="hidden" id="latitude" name="latitude">
+        <input type="hidden" id="longitude" name="longitude">
                 <br> <br>
+
+ <div id="map" style="height: 400px; width:auto"></div>
+
+
                 <button type="submit" class="btn" name="submit">Submit</button>
             </form>
 
@@ -134,11 +178,10 @@ if(isset($_POST['submit'])) {
             
             
             <?php
-// Check if there are any records
+
 if ($result->num_rows > 0) {
-    // Output data of each row
+    
     while($row = $result->fetch_assoc()) {
-        // Display the details of each boarding place
         echo "Place Name: " . $row["title"]. "<br>";
         echo "Location: " . $row["status"]. "<br>";
         echo "Description: " . $row["rental"]. "<br><br>";
@@ -149,7 +192,7 @@ if ($result->num_rows > 0) {
     echo $user_id;
 }
 
-// Close database connection
+
 
 $conn->close();
 
@@ -162,7 +205,7 @@ $conn->close();
 
 
             </div>
-                                  <a href="logout.php" class="btn">logout</a>
+                                  <!-- <a href="logout.php" class="btn">logout</a> -->
         </div>
     </div>
 
